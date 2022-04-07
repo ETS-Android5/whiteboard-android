@@ -212,11 +212,6 @@ public class RoomActivity extends BaseActivity {
             public void onPPTMediaPause() {
                 logAction();
             }
-
-            @Override
-            public void onLogger(JSONObject object) {
-                logAction(object.toString());
-            }
         });
 
         FontFace fontFace = new FontFace("example", "url(https://white-pan.oss-cn-shanghai.aliyuncs.com/Pacifico-Regular.ttf)");
@@ -239,7 +234,7 @@ public class RoomActivity extends BaseActivity {
         //如需支持用户头像，请在设置 WhiteSdkConfiguration 后，再调用 setUserPayload 方法，传入符合用户信息
         RoomParams roomParams = new RoomParams(uuid, token, DemoAPI.DEFAULT_UID);
         roomParams.setDisableNewPencil(false);
-        roomParams.setWritable(true);
+        roomParams.setWritable(false);
 
         final Date joinDate = new Date();
         logRoomInfo("native join " + joinDate);

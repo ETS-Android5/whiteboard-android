@@ -80,7 +80,7 @@ public class ApiService {
         Map<String, Object> roomSpec = new HashMap<>();
         // unit ms, one day: 3600 * 24 * 1000
         roomSpec.put("lifespan", 0);
-        roomSpec.put("role", "admin");
+        roomSpec.put("role", "reader");
         RequestBody body = RequestBody.create(JSON, gson.toJson(roomSpec));
         Request request = new Request.Builder()
                 .url(host + "/tokens/rooms/" + uuid)
